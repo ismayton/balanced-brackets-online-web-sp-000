@@ -15,8 +15,10 @@ function isBalanced(string)
     let index = partnerTest(edgeCase)
     console.log('redo inside with new string')
     console.log(edgeCase)
-    string = string.substring(1, index + 1)
-    isBalanced(string)
+    resolved = string.substring(1, index + 1)
+    console.log('resolved edge case')
+    console.log(resolved)
+    isBalanced(resolved)
   }
   
   else
