@@ -12,7 +12,7 @@ function isBalanced(string)
   {
     return false
   }
-  else if(identicalOpen(string) && identicalClose(string))
+  else if(edgeCase(string))
   {
     return true
   }
@@ -183,7 +183,7 @@ function partnerTest(string)
   }
 }
 
-function identicalOpen(string)
+function edgeCase(string)
 {
   if((string[0] === '(' || string[0] === '{' || string[0] === '[') && string[0] === string[1])
   {
