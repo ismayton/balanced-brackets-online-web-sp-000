@@ -48,7 +48,6 @@ function removeBalancedBrackets(string)
       }
     }
   }
-  
   else if(string[0] == '(')
   {
     for(let j = 0; j < string.length; j++)
@@ -83,7 +82,9 @@ function insideBrackets(string)
     edgeCase = string.slice(1)
     if(insideBrackets(edgeCase))
     {
-      removeBalancedBrackets(edgeCase)
+      edgeRemoved = removeBalancedBrackets(edgeCase)
+      console.log('edgeCase removed')
+      insideBrackets(edgeRemoved)
     }
   }
   if(string[0] == '{')
