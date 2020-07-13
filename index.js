@@ -8,6 +8,17 @@ function isBalanced(string)
   {
     return false
   }
+  else if(string[0] === string[1])
+  {
+    console.log('double open found')
+    let edgeCase = string.slice(1)
+    let index = partnerTest(edgeCase)
+    console.log('redo inside with new string')
+    console.log(edgeCase)
+    string = string.substring(1, index + 1)
+    isBalanced(string)
+  }
+  
   else
   {
     let inside = insideBrackets(string)
@@ -76,14 +87,6 @@ function removeBalancedBrackets(string)
 
 function insideBrackets(string)
 {
-  if(string[0] === string[1])
-  {
-    console.log('double open found')
-    let edgeCase = string.slice(1)
-    console.log('redo inside with new string')
-    console.log(edgeCase)
-    return removeBalancedBrackets(edgeCase)
-  }
   if(string[0] == '{')
   {
     for(let j = 0; j < string.length; j++)
@@ -138,7 +141,7 @@ function partnerTest(string)
     {
       if(string[j] == '}')
       {
-        return true
+        return j
       }
     }
   }
@@ -149,7 +152,7 @@ function partnerTest(string)
     {
       if(string[j] == ')')
       {
-        return true
+        return j
       }
     }
   }
@@ -160,7 +163,7 @@ function partnerTest(string)
     {
       if(string[j] == ']')
       {
-        return true
+        return j
       }
     }
   }
