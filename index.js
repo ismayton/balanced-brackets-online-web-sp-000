@@ -82,12 +82,7 @@ function insideBrackets(string)
     let edgeCase = string.slice(1)
     console.log('redo inside with new string')
     console.log(edgeCase)
-    if(!!insideBrackets(edgeCase))
-    {
-      let edgeRemoved = removeBalancedBrackets(edgeCase)
-      console.log('edgeCase removed')
-      return insideBrackets(edgeRemoved)
-    }
+    return insideBrackets(edgeCase))
   }
   if(string[0] == '{')
   {
