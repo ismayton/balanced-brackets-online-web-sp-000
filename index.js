@@ -79,10 +79,10 @@ function insideBrackets(string)
   if(string[0] === string[1])
   {
     console.log('double open found')
-    edgeCase = string.slice(1)
+    let edgeCase = string.slice(1)
     if(insideBrackets(edgeCase))
     {
-      edgeRemoved = removeBalancedBrackets(edgeCase)
+      let edgeRemoved = removeBalancedBrackets(edgeCase)
       console.log('edgeCase removed')
       return insideBrackets(edgeRemoved)
     }
