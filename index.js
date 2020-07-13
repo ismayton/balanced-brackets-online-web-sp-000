@@ -20,7 +20,6 @@ function isBalanced(string)
     console.log(resolved)
     isBalanced(resolved)
   }
-  
   else
   {
     let inside = insideBrackets(string)
