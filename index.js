@@ -37,13 +37,6 @@ function isBalanced(string)
 
 function removeBalancedBrackets(string)
 {
-  if(string[0] === string[1])
-  {
-    edgeCase = string.slice(1)
-    console.log('double open found')
-    insideBrackets(edgeCase)
-    
-  }
   if(string[0] == '{')
   {
     for(let j = 0; j < string.length; j++)
@@ -84,6 +77,12 @@ function removeBalancedBrackets(string)
 
 function insideBrackets(string)
 {
+  if(string[0] === string[1])
+  {
+    edgeCase = string.slice(1)
+    console.log('double open found')
+    return insideBrackets(edgeCase)
+  }
   if(string[0] == '{')
   {
     for(let j = 0; j < string.length; j++)
