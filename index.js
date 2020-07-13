@@ -4,59 +4,40 @@ function isBalanced(string)
   {
     return true
   }
-  else if(string[0] === '}' || string[0] === ']' || string[0] === ')')
-  {
-    return false
-  }
   else if(isOdd(string.length))
   {
     return false
   }
-  else if(edgeCase(string))
-  {
-    return true
-  }
   else
   {
-    console.log('current string')
-    console.log(string)
-    
     let inside = insideBrackets(string)
-    console.log('testing inside')
-    console.log(inside)
-    
     if(isBalanced(inside))
     {
-      console.log('inside balanced')
-      
       let next = removeBalancedBrackets(string)
-      console.log('testing next')
-      console.log(next)
-      
       if(isBalanced(next))
       {
-        console.log('next balanced')
         return true
       }
       else
       {
-        console.log('FALSE next unbalanced')
         return false
       }
     }
     else
     {
-      console.log('FALSE inside unbalanced')
       return false
     }
   }
-  console.log('made it through!')
-  return true
 }
 
 
 function removeBalancedBrackets(string)
 {
+  if(string[0] === string[1])
+  {
+    inside = string.slice(1)
+    removeBalancedBrackets(inside)
+  }
   if(string[0] == '{')
   {
     for(let j = 0; j < string.length; j++)
